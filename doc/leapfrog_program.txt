@@ -1,0 +1,114 @@
+s = "123hello12c"
+append_array = []
+value = 0
+array_length = len(s)
+for index, item in enumerate(s):
+    # print(item)
+    if item.isnumeric():
+        print("numeric=",item)
+        value += int(item)
+
+        # for last one
+        if index == array_length-1:
+            append_array.append(value)
+            value = 0
+    else:
+        if value != 0:
+            print("value = ",value)
+            # append
+            append_array.append(value)
+            value = 0
+
+if len(append_array) == 0:
+    append_array.append(0)
+print(append_array)
+
+
+s  = "a technology company of nepal"
+a_count =  0
+e_count = 0
+i_count = 0
+o_count = 0
+u_count = 0
+for item in s:
+    lower_case_letter = item.lower()
+    if lower_case_letter == 'a':
+        a_count +=1
+
+    elif lower_case_letter == 'e':
+        e_count += 1
+
+    elif lower_case_letter == 'i':
+        i_count += 1
+
+    elif lower_case_letter == 'o':
+        o_count += 1
+
+    elif lower_case_letter == 'u':
+        u_count += 1
+output = ""
+if a_count == 0 and e_count == 0 and i_count == 0 and o_count ==0 and u_count == 0:
+    output =None
+else:
+    if a_count > 0:
+        output += "{}a".format(a_count)
+    if e_count > 0:
+        output += "{}e".format(e_count)
+
+    if i_count > 0:
+        output += "{}i".format(i_count)
+
+    if o_count > 0:
+        output += "{}o".format(o_count)
+
+    if u_count > 0:
+        output += "{}u".format(u_count)
+
+print(output)
+
+
+s = "001001111"
+zero_count = 0
+one_count = 0
+output = 'yes'
+length = len(s)
+for index, item in enumerate(s):
+    if item == '0':
+        zero_count +=1
+
+        if one_count > 0:
+            if one_count % 2 != 0:
+                pass
+            else:
+                output = 'no'
+                break
+            one_count = 0
+
+    elif item == '1':
+        one_count += 1
+        if zero_count > 0:
+            if zero_count % 2 == 0:
+                pass
+            else:
+                output = 'no'
+                break
+            zero_count = 0
+
+    if index == length -1:
+        if one_count > 0:
+            if one_count % 2 != 0:
+                pass
+            else:
+                output = 'no'
+                break
+            one_count = 0
+
+        if zero_count > 0:
+            if zero_count % 2 == 0:
+                pass
+            else:
+                output = 'no'
+                break
+            zero_count = 0
+
+print(output)
